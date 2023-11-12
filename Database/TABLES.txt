@@ -1,0 +1,169 @@
+CREATE DATABASE opms;
+
+CREATE TABLE Doctor
+(
+  Doctor_id INT AUTO_INCREMENT,
+  First_Name VARCHAR(50) NOT NULL,
+  Middle_Name VARCHAR(50) NOT NULL,
+  Last_Name VARCHAR(50) NOT NULL,
+  Age VARCHAR(50) NOT NULL,
+  Doctor_Number VARCHAR(50) NOT NULL,
+  Doctor_Email VARCHAR(50) NOT NULL,
+  Joining_Date VARCHAR(50) NOT NULL,
+  PRIMARY KEY (Doctor_id)
+);
+
+CREATE TABLE Qualifications
+(
+  Doc_Q_length VARCHAR(50) NOT NULL,
+  Doc_Degree VARCHAR(50) NOT NULL,
+  Doc_Institution VARCHAR(50) NOT NULL,
+  Qua_ID INT AUTO_INCREMENT,
+  Doctor_id INT NOT NULL,
+  PRIMARY KEY (Qua_ID),
+  FOREIGN KEY (Doctor_id) REFERENCES Doctor(Doctor_id)
+);
+
+CREATE TABLE PA
+(
+  Salary FLOAT(7,2) NOT NULL,
+  Email_PA VARCHAR(50) NOT NULL,
+  Start_Name VARCHAR(50) NOT NULL,
+  End_Name VARCHAR(50) NOT NULL,
+  PA_Number VARCHAR(50) NOT NULL,
+  Street VARCHAR(50) NOT NULL,
+  Zip_Code VARCHAR(50) NOT NULL,
+  City VARCHAR(50) NOT NULL,
+  PA_ID INT AUTO_INCREMENT,
+  Doctor_id INT NOT NULL,
+  PRIMARY KEY (PA_ID),
+  FOREIGN KEY (Doctor_id) REFERENCES Doctor(Doctor_id)
+);
+
+CREATE TABLE Diseases
+(
+  Diseases_Name VARCHAR(50) NOT NULL,
+  Diseases_Code INT AUTO_INCREMENT,
+  Diseases_Symptom VARCHAR(1000) NOT NULL,
+  Doctor_id INT NOT NULL,
+  PRIMARY KEY (Diseases_Code),
+  FOREIGN KEY (Doctor_id) REFERENCES Doctor(Doctor_id)
+);
+
+CREATE TABLE Patient
+(
+  Patient_id INT AUTO_INCREMENT,
+  Email VARCHAR(50) NOT NULL,
+  DOB VARCHAR(50) NOT NULL,
+  First_Name VARCHAR(50) NOT NULL,
+  Middle_Name VARCHAR(50) NOT NULL,
+  Last_Name VARCHAR(50) NOT NULL,
+  Patient_Number VARCHAR(50) NOT NULL,
+  Street VARCHAR(50) NOT NULL,
+  City VARCHAR(50) NOT NULL,
+  Zip_Code VARCHAR(50) NOT NULL,
+  State VARCHAR(50) NOT NULL,
+  Doctor_id INT NOT NULL,
+  PRIMARY KEY (Patient_id),
+  FOREIGN KEY (Doctor_id) REFERENCES Doctor(Doctor_id)
+);
+
+CREATE TABLE Test
+(
+  Test_Name VARCHAR(50) NOT NULL,
+  Result VARCHAR(1000) NOT NULL,
+  Time_Needed VARCHAR(50) NOT NULL,
+  Test_Serial INT AUTO_INCREMENT,
+  Patient_id INT NOT NULL,
+  Doctor_id INT NOT NULL,
+  PRIMARY KEY (Test_Serial),
+  FOREIGN KEY (Patient_id) REFERENCES Patient(Patient_id),
+  FOREIGN KEY (Doctor_id) REFERENCES Doctor(Doctor_id)
+);
+
+CREATE TABLE Chamber
+(
+  Chamber_Rent FLOAT(7,2) NOT NULL,
+  Chamber_no INT AUTO_INCREMENT,
+  location VARCHAR(50) NOT NULL,
+  Available_Time VARCHAR(50) NOT NULL,
+  Telephone_no VARCHAR(50) NOT NULL,
+  Doctor_id INT NOT NULL,
+  PA_ID INT NOT NULL,
+  PRIMARY KEY (Chamber_no),
+  FOREIGN KEY (Doctor_id) REFERENCES Doctor(Doctor_id),
+  FOREIGN KEY (PA_ID) REFERENCES PA(PA_ID)
+);
+
+CREATE TABLE Payment
+(
+  Payment_id INT AUTO_INCREMENT,
+  Payment_Date VARCHAR(50) NOT NULL,
+  Old_Amount FLOAT(7,2) NOT NULL,
+  New_Amount FLOAT(7,2) NOT NULL,
+  Total_Payment FLOAT(8,2) NOT NULL,
+  Paid VARCHAR(50) NOT NULL,
+  Unpaid VARCHAR(50) NOT NULL,
+  Payment_Time VARCHAR(50) NOT NULL,
+  Patient_id INT NOT NULL,
+  PRIMARY KEY (Payment_id),
+  FOREIGN KEY (Patient_id) REFERENCES Patient(Patient_id)
+);
+
+CREATE TABLE Method
+(
+  Method_Code INT AUTO_INCREMENT,
+  Method_Process VARCHAR(50) NOT NULL,
+  Method_Used_for VARCHAR(50) NOT NULL,
+  Payment_id INT NOT NULL,
+  PRIMARY KEY (Method_Code),
+  FOREIGN KEY (Payment_id) REFERENCES Payment(Payment_id)
+);
+
+CREATE TABLE History
+(
+  Remarks VARCHAR(1000) NOT NULL,
+  V_Date VARCHAR(50) NOT NULL,
+  V_Month VARCHAR(50) NOT NULL,
+  V_Year VARCHAR(50) NOT NULL,
+  H_Code INT AUTO_INCREMENT,
+  Patient_id INT NOT NULL,
+  Payment_id INT NOT NULL,
+  PRIMARY KEY (H_Code),
+  FOREIGN KEY (Patient_id) REFERENCES Patient(Patient_id),
+  FOREIGN KEY (Payment_id) REFERENCES Payment(Payment_id)
+);
+
+CREATE TABLE Blood
+(
+  Blood_Group VARCHAR(50) NOT NULL,
+  Quantity_Blood VARCHAR(50) NOT NULL,
+  Donor_ID INT AUTO_INCREMENT,
+  Number_of_donations VARCHAR(50) NOT NULL,
+  Patient_id INT NOT NULL,
+  PRIMARY KEY (Donor_ID),
+  FOREIGN KEY (Patient_id) REFERENCES Patient(Patient_id)
+);
+
+CREATE TABLE Prescription
+(
+  Prescription_no INT AUTO_INCREMENT,
+  Direction VARCHAR(1000) NOT NULL,
+  Medicine VARCHAR(100) NOT NULL,
+  Dose VARCHAR(100) NOT NULL,
+  Doctor_id INT NOT NULL,
+  Patient_id INT NOT NULL,
+  PRIMARY KEY (Prescription_no),
+  FOREIGN KEY (Doctor_id) REFERENCES Doctor(Doctor_id),
+  FOREIGN KEY (Patient_id) REFERENCES Patient(Patient_id)
+);
+
+CREATE TABLE Carry
+(
+  C_Days VARCHAR(50) NOT NULL,
+  Patient_id INT NOT NULL,
+  Diseases_Code INT NOT NULL,
+  PRIMARY KEY (Patient_id, Diseases_Code),
+  FOREIGN KEY (Patient_id) REFERENCES Patient(Patient_id),
+  FOREIGN KEY (Diseases_Code) REFERENCES Diseases(Diseases_Code)
+);

@@ -1,0 +1,180 @@
+INSERT INTO doctor(Doctor_id,First_Name,Middle_Name,Last_Name,Age,Doctor_Number,Doctor_Email,Joining_Date)
+VALUES(1,"MD.","ASHIK","AHMED",41,"+8801700000000","ashik.mbbs@gmail.com","29-12-1980");
+INSERT INTO doctor(First_Name,Middle_Name,Last_Name,Age,Doctor_Number,Doctor_Email,Joining_Date)
+VALUES("MD.","RAFI","AHMED",40,"+8801700110000","rafi.mbbs@gmail.com","20-09-1981");
+INSERT INTO doctor(First_Name,Middle_Name,Last_Name,Age,Doctor_Number,Doctor_Email,Joining_Date)
+VALUES("MD.","ROBI","UDDIN",36,"+8801700110880","robi.mbbs@gmail.com","30-11-1985");
+INSERT INTO doctor(First_Name,Middle_Name,Last_Name,Age,Doctor_Number,Doctor_Email,Joining_Date)
+VALUES("MD.","ABU","BAKAR",45,"+8801770119880","abu.mbbs@gmail.com","10-12-1976");
+INSERT INTO doctor(First_Name,Middle_Name,Last_Name,Age,Doctor_Number,Doctor_Email,Joining_Date)
+VALUES("MD.","SABBIR","HOSSAIN",35,"+8801774819891","sabbir.mbbs@gmail.com","17-08-1986");
+
+INSERT INTO qualifications(Doc_Q_length,Doc_Degree,Doc_Institution,Qua_ID,Doctor_id)
+VALUES("30 years","Doctor in medicine","Dhaka Medical College",1,5);
+INSERT INTO qualifications(Doc_Q_length,Doc_Degree,Doc_Institution,Doctor_id)
+VALUES("30 years","Doctor in Radiologists","Dhaka Medical College",5);
+INSERT INTO qualifications(Doc_Q_length,Doc_Degree,Doc_Institution,Doctor_id)
+VALUES("34 years","Doctor in Surgery","Dhaka Medical College",2);
+INSERT INTO qualifications(Doc_Q_length,Doc_Degree,Doc_Institution,Doctor_id)
+VALUES("33 years","Doctor in Neurologists","Comilla Medical College",4);
+INSERT INTO qualifications(Doc_Q_length,Doc_Degree,Doc_Institution,Doctor_id)
+VALUES("31 years","Doctor in Psychiatrists","Dhaka Medical College",1);
+INSERT INTO qualifications(Doc_Q_length,Doc_Degree,Doc_Institution,Doctor_id)
+VALUES("32 years","Doctor in Anesthesiologists","Rajshahi Medical College",3);
+INSERT INTO qualifications(Doc_Q_length,Doc_Degree,Doc_Institution,Doctor_id)
+VALUES("32 years","Doctor in medicine","Dhaka Medical College",3);
+
+INSERT INTO pa(Salary,Email_PA,Start_Name,End_Name,PA_Number,Street,Zip_Code,City,PA_ID,Doctor_id)
+VALUES(10012.50,"masud@gmail.com","MD.","MASUD","+8801800000000","Road-12","5700","Dhaka",1,5);
+INSERT INTO pa(Salary,Email_PA,Start_Name,End_Name,PA_Number,Street,Zip_Code,City,Doctor_id)
+VALUES(15000.00,"momin@gmail.com","MD.","MOMIN","+8801800110000","Road-18","6700","Chittagong",3);
+INSERT INTO pa(Salary,Email_PA,Start_Name,End_Name,PA_Number,Street,Zip_Code,City,Doctor_id)
+VALUES(19000.80,"tamanna@gmail.com","TAMANNA","AKTER","+8801800198002","Villa-90","5700","Dhaka",3);
+INSERT INTO pa(Salary,Email_PA,Start_Name,End_Name,PA_Number,Street,Zip_Code,City,Doctor_id)
+VALUES(13200.50,"jamil@gmail.com","MD.","JAMIL","+8801870896547","Dighi-09","3700","Barishal",4);
+INSERT INTO pa(Salary,Email_PA,Start_Name,End_Name,PA_Number,Street,Zip_Code,City,Doctor_id)
+VALUES(15490.00,"ratul@gmail.com","MD.","RATUL","+880180009034","Block-80","5500","Khulna",1);
+INSERT INTO pa(Salary,Email_PA,Start_Name,End_Name,PA_Number,Street,Zip_Code,City,Doctor_id)
+VALUES(11250.00,"rabbi@gmail.com","MD.","RABBI","+8801871110304","Road-34","4200","Rangpur",2);
+
+INSERT INTO diseases(Diseases_Name,Diseases_Code,Diseases_Symptom,Doctor_id)
+VALUES("Cerebrovascular",1,"Affect brain,spinal cord,nerves,demyelinating of the central nervous system",4);
+INSERT INTO diseases(Diseases_Name,Diseases_Symptom,Doctor_id)
+VALUES("Psychological","Problems in mental health, including substance use disorders",1);
+INSERT INTO diseases(Diseases_Name,Diseases_Symptom,Doctor_id)
+VALUES("Fever,Cough,Cold,Headache","Runny nose,Sore throat,Congestion,mild headache,Sneezing",3);
+INSERT INTO diseases(Diseases_Name,Diseases_Symptom,Doctor_id)
+VALUES("Injuries","Bleeding or uncontrolled or heavy bleeding,hemorrhage",5);
+INSERT INTO diseases(Diseases_Name,Diseases_Symptom,Doctor_id)
+VALUES("Dental Restoration","Pain in teeth",2);
+
+INSERT INTO patient(Patient_id,Email,DOB,First_Name,Middle_Name,Last_Name,Patient_Number,Street,City,Zip_Code,State,Doctor_id)
+VALUES(1,"aznayem@gmail.com","28-12-1912","AZ","NAYEM","ISLAM","+8801300000000","Road-67","Dhaka","5700","BD",5);
+INSERT INTO patient(Email,DOB,First_Name,Middle_Name,Last_Name,Patient_Number,Street,City,Zip_Code,State,Doctor_id)
+VALUES("hasi@gmail.com","10-11-1998","MD.","HASI","CHOWDHURY","+8801300110000","Road-98","Dhaka","5700","BD",5);
+INSERT INTO patient(Email,DOB,First_Name,Middle_Name,Last_Name,Patient_Number,Street,City,Zip_Code,State,Doctor_id)
+VALUES("zia@gmail.com","17-10-1919","MD.","ZIA","ISLAM","+8801390877890","Road-89","Rangpur","4200","BD",3);
+INSERT INTO patient(Email,DOB,First_Name,Middle_Name,Last_Name,Patient_Number,Street,City,Zip_Code,State,Doctor_id)
+VALUES("mithu@gmail.com","10-09-1908","MD.","MITHU","TALUKDAR","+8801345678903","Road-69","Rajshahi","6000","BD",1);
+INSERT INTO patient(Email,DOB,First_Name,Middle_Name,Last_Name,Patient_Number,Street,City,Zip_Code,State,Doctor_id)
+VALUES("rayhan@gmail.com","10-07-1932","MD.","RAYHAN","ISLAM","+8801311111111","Villa-56","Dhaka","5700","BD",2);
+INSERT INTO patient(Email,DOB,First_Name,Middle_Name,Last_Name,Patient_Number,Street,City,Zip_Code,State,Doctor_id)
+VALUES("moyna@gmail.com","30-10-1952","HURI","MOYNA","KHATUN","+8801378566644","Rasta-12","Khulna","5500","BD",4);
+INSERT INTO patient(Email,DOB,First_Name,Middle_Name,Last_Name,Patient_Number,Street,City,Zip_Code,State,Doctor_id)
+VALUES("noyon@gmail.com","20-10-1992","MD.","NOYON","ISLAM","+8801367323222","Road-14","Barishal","3700","BD",4);
+
+INSERT INTO test(Test_Name,Result,Time_Needed,Test_Serial,Patient_id,Doctor_id)
+VALUES("Cerebrovascular Test","Positive","1 hour 30 min",1,6,4);
+INSERT INTO test(Test_Name,Result,Time_Needed,Patient_id,Doctor_id)
+VALUES("Psychological Test","Positive","2 hour 00 min",4,1);
+INSERT INTO test(Test_Name,Result,Time_Needed,Patient_id,Doctor_id)
+VALUES("Fever Test","Positive","0 hour 30 min",3,3);
+INSERT INTO test(Test_Name,Result,Time_Needed,Patient_id,Doctor_id)
+VALUES("Dental Restoration Test","No","1 hour 30 min",5,2);
+INSERT INTO test(Test_Name,Result,Time_Needed,Patient_id,Doctor_id)
+VALUES("Injuries Test","Positive","1 hour 00 min",2,5);
+INSERT INTO test(Test_Name,Result,Time_Needed,Patient_id,Doctor_id)
+VALUES("Cough Test","Positive","0 hour 30 min",5,3);
+
+INSERT INTO chamber(Chamber_Rent,Chamber_no,location,Available_Time,Telephone_no,Doctor_id,PA_ID)
+VALUES(19000.01,1,"Uttar Badda","7:00pm-9:00pm","+990789654",3,2);
+INSERT INTO chamber(Chamber_Rent,location,Available_Time,Telephone_no,Doctor_id,PA_ID)
+VALUES(13060.00,"Gulshan","7:00am-11:00am","+990342654",2,6);
+INSERT INTO chamber(Chamber_Rent,location,Available_Time,Telephone_no,Doctor_id,PA_ID)
+VALUES(31000.00,"Banani","9:00pm-2:00pm","+991697514",5,1);
+INSERT INTO chamber(Chamber_Rent,location,Available_Time,Telephone_no,Doctor_id,PA_ID)
+VALUES(22400.00,"Uttara","11:00am-9:00pm","+990766694",3,3);
+INSERT INTO chamber(Chamber_Rent,location,Available_Time,Telephone_no,Doctor_id,PA_ID)
+VALUES(27789.00,"Kakrail","8:00am-01:00pm","+990782554",1,5);
+INSERT INTO chamber(Chamber_Rent,location,Available_Time,Telephone_no,Doctor_id,PA_ID)
+VALUES(17000.00,"Shanti-Nagar","9:00am-03:00pm","+994876514",4,4);
+
+INSERT INTO payment(Payment_id,Payment_Date,Old_Amount,New_Amount,Total_Payment,Paid,Unpaid,Payment_Time,Patient_id)
+VALUES(1,"02-12-2021",0.00,2000.00,3000.00,"Yes","No","02:10:55",4);
+INSERT INTO payment(Payment_Date,Old_Amount,New_Amount,Total_Payment,Paid,Unpaid,Payment_Time,Patient_id)
+VALUES("06-10-2021",550.00,2100.00,1500.00,"No","Yes","01:16:35",7);
+INSERT INTO payment(Payment_Date,Old_Amount,New_Amount,Total_Payment,Paid,Unpaid,Payment_Time,Patient_id)
+VALUES("21-08-2021",0.00,3600.00,4400.00,"Yes","No","08:19:20",2);
+INSERT INTO payment(Payment_Date,Old_Amount,New_Amount,Total_Payment,Paid,Unpaid,Payment_Time,Patient_id)
+VALUES("08-09-2021",200.00,5000.00,7000.00,"Yes","No","09:33:48",5);
+INSERT INTO payment(Payment_Date,Old_Amount,New_Amount,Total_Payment,Paid,Unpaid,Payment_Time,Patient_id)
+VALUES("23-01-2021",0.00,3200.00,3200.00,"Yes","No","12:00:00",1);
+INSERT INTO payment(Payment_Date,Old_Amount,New_Amount,Total_Payment,Paid,Unpaid,Payment_Time,Patient_id)
+VALUES("31-12-2021",2000.00,1530.00,4500.00,"No","Yes","10:13:28",6);
+INSERT INTO payment(Payment_Date,Old_Amount,New_Amount,Total_Payment,Paid,Unpaid,Payment_Time,Patient_id)
+VALUES("13-11-2021",0.00,7000.00,8900.00,"Yes","No","06:13:12",3);
+
+INSERT INTO method(Method_Code,Method_Process,Method_Used_for,Payment_id)
+VALUES(1,"BKash","2nd time",3);
+INSERT INTO method(Method_Process,Method_Used_for,Payment_id)
+VALUES("Rocket","3rd time",7);
+INSERT INTO method(Method_Process,Method_Used_for,Payment_id)
+VALUES("Upay","1st time",5);
+INSERT INTO method(Method_Process,Method_Used_for,Payment_id)
+VALUES("Nagad","5th time",6);
+INSERT INTO method(Method_Process,Method_Used_for,Payment_id)
+VALUES("Card","1st time",2);
+INSERT INTO method(Method_Process,Method_Used_for,Payment_id)
+VALUES("BKash","10th time",4);
+INSERT INTO method(Method_Process,Method_Used_for,Payment_id)
+VALUES("Nagad","2nd time",1);
+INSERT INTO method(Method_Process,Method_Used_for,Payment_id)
+VALUES("BKash","3rd time",2);
+INSERT INTO method(Method_Process,Method_Used_for,Payment_id)
+VALUES("Card","4th time",4);
+
+INSERT INTO history(Remarks,V_Date,V_Month,V_Year,H_Code,Patient_id,Payment_id)
+VALUES("Okay","10","January","2021",1,4,1);
+INSERT INTO history(Remarks,V_Date,V_Month,V_Year,Patient_id,Payment_id)
+VALUES("Okay","20","January","2021",7,2);
+INSERT INTO history(Remarks,V_Date,V_Month,V_Year,Patient_id,Payment_id)
+VALUES("Okay","10","February","2021",2,3);
+INSERT INTO history(Remarks,V_Date,V_Month,V_Year,Patient_id,Payment_id)
+VALUES("Okay","23","May","2021",5,4);
+INSERT INTO history(Remarks,V_Date,V_Month,V_Year,Patient_id,Payment_id)
+VALUES("Okay","07","March","2021",1,5);
+INSERT INTO history(Remarks,V_Date,V_Month,V_Year,Patient_id,Payment_id)
+VALUES("Okay","17","November","2021",6,6);
+INSERT INTO history(Remarks,V_Date,V_Month,V_Year,Patient_id,Payment_id)
+VALUES("Okay","07","October","2021",3,7);
+
+INSERT INTO blood(Blood_Group,Quantity_Blood,Donor_ID,Number_of_donations,Patient_id)
+VALUES("A+","1 bag",1,07,7);
+INSERT INTO blood(Blood_Group,Quantity_Blood,Number_of_donations,Patient_id)
+VALUES("AB+","2 bag",17,5);
+INSERT INTO blood(Blood_Group,Quantity_Blood,Number_of_donations,Patient_id)
+VALUES("B+","1 bag",02,3);
+INSERT INTO blood(Blood_Group,Quantity_Blood,Number_of_donations,Patient_id)
+VALUES("AB-","2 bag",10,1);
+INSERT INTO blood(Blood_Group,Quantity_Blood,Number_of_donations,Patient_id)
+VALUES("O+","1 bag",03,6);
+INSERT INTO blood(Blood_Group,Quantity_Blood,Number_of_donations,Patient_id)
+VALUES("O-","1 bag",09,4);
+INSERT INTO blood(Blood_Group,Quantity_Blood,Number_of_donations,Patient_id)
+VALUES("B-","3 bag",31,2);
+
+INSERT INTO prescription(Prescription_no,Direction,Medicine,Dose,Doctor_id,Patient_id)
+VALUES(1,'Smile All Day Long','Adderall',"three times",5,2);
+INSERT INTO prescription(Direction,Medicine,Dose,Doctor_id,Patient_id)
+VALUES('Eat Healthy Foods','Ativan',"one time",3,3);
+INSERT INTO prescription(Direction,Medicine,Dose,Doctor_id,Patient_id)
+VALUES('Exercise Daily','Atorvastatin',"two times",1,4);
+INSERT INTO prescription(Direction,Medicine,Dose,Doctor_id,Patient_id)
+VALUES('Work Hard','Losartan',"three times",2,5);
+INSERT INTO prescription(Direction,Medicine,Dose,Doctor_id,Patient_id)
+VALUES('Strees free Life Needed','Albuterol',"five times",4,7);
+
+INSERT INTO carry(C_Days,Patient_id,Diseases_Code)
+VALUES("07 Days",3,3);
+INSERT INTO carry(C_Days,Patient_id,Diseases_Code)
+VALUES("09 Days",5,5);
+INSERT INTO carry(C_Days,Patient_id,Diseases_Code)
+VALUES("14 Days",7,1);
+INSERT INTO carry(C_Days,Patient_id,Diseases_Code)
+VALUES("21 Days",6,1);
+INSERT INTO carry(C_Days,Patient_id,Diseases_Code)
+VALUES("65 Days",4,2);
+INSERT INTO carry(C_Days,Patient_id,Diseases_Code)
+VALUES("15 Days",2,4);
+INSERT INTO carry(C_Days,Patient_id,Diseases_Code)
+VALUES("26 Days",1,5);
